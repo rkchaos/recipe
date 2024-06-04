@@ -11,7 +11,7 @@ const passport = require('passport');
 const User=require("./server/models/User")
 const LocalStrategy=require('passport-local')
 // const { Session } = require('inspector');
-const port=process.env.Port
+const port=process.env.PORT
 require('dotenv').config();
 
 app.use(flash());
@@ -48,6 +48,6 @@ app.set('layout','./layouts/main')
 
 
 
-app.listen(port,()=>{
-    console.log(`server connected to ${port}`)
+app.listen(PORT,()=>{
+    console.log(`server connected to ${PORT}`)
 })
