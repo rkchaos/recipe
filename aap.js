@@ -48,6 +48,6 @@ app.set('layout','./layouts/main')
 
 
 
-app.listen(PORT,()=>{
-    console.log(`server connected to ${PORT}`)
+app.listen(port,()=>{
+    console.log(`server connected to ${port}`)
 })
