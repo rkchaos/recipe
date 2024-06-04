@@ -1,0 +1,148 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+      <img src="/img/hero-image.png" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Cooking With Node.js">
+    </div>
+  
+    <div class="col-12 col-lg-6">
+      <h1 class="display-5 fw-bold mb-3">Huge selection of delicios recipe ideas</h1>
+      <p class="lead">
+        Explore our huge selection of delicious recipe ideas including; easy desserts, delicious vegan and vegetarian dinner ideas, gorgeous pasta recipes, quick bakes, family-friendly meals and gluten-free recipes.
+      </p>
+  
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Latest</a>
+        <a href="/explore-random" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Show Random</a>
+      </div>
+  
+    </div>
+  </div>
+  
+  <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4 d-flex  flex-wrap" > 
+  
+
+    <%if(categories != '') {%>
+      <%for(let item of  categories) { %>
+  <a href="/categories/<%- item.name%>" class="col text-center category_link">
+    <div class="category__img shadow">
+        <img src="../img/<%=item.image%>" alt="<%=item.name%>" loading="lazy">
+      </div>
+      <div class="pt-1"><%=item.name%></div>
+    </a>
+  
+  
+<%}%>
+
+    <% } %>
+    <a href="/categories" class="col text-center category_link">
+      <div class="category__img shadow">
+          <img src="../img/view-all.jpg" alt="View All Categories" loading="lazy">
+        </div>
+        <div class="pt-1">View All</div>
+      </a>
+  
+
+</div>
+<section class="pb-4 pt-4" >
+
+    <div>
+        <h2 >Latest recipe</h2>
+        <a href="/explore-latest" class=" float-end">View more</a>
+    </div>
+
+   
+    <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4 d-flex" >
+      <% for(let latests of latest){ %>
+    <a href="/recipe/<%=latests._id%>" class="col text-center category_link">
+        <div class="category__img shadow  category__img--large">
+            <img src="../uploads/<%=latests.image%>" alt="<%=latests.name%>" loading="lazy">
+          </div>
+          <div class="pt-1"><%=latests.name%></div>
+        </a>
+    
+  <% }%>
+ 
+    </div>
+</section>
+<section class="pb-4 pt-4" >
+
+    <div>
+        <h2 >Indian recipe</h2>
+        <a href="/explore-latest" class=" float-end">View more</a>
+    </div>
+
+   
+    <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4 d-flex" >
+      
+    <%if(india != '') {%>
+     <% india.forEach(function(recipe,index){%>
+
+   
+    <a href="/recipe/<%=recipe._id%>" class="col text-center category_link">
+        <div class="category__img shadow  category__img--large">
+            <img src="../uploads/<%=recipe.image%>" alt="<%=recipe.name%>" loading="lazy">
+          </div>
+          <div class="pt-1"><%=recipe.name%></div>
+        </a>
+    
+     <% })%>
+  <%}%>
+ 
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- submit -->
+<section class="text-center">
+    <img src="/img/publish-recipe.png" alt="some image" class="image-fluid ">
+<h1 class="fw-bold display-5">Public your recipe for free today</h1>
+<p class="lead mb-4">Publish your Recipe in front of thousands of people for free</p>
+<a href="/submit-recipe" class="btn btn-primary btn-dark btn-lg">Submit Recipe</a>
+</section>
