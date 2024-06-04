@@ -11,7 +11,7 @@ const passport = require('passport');
 const User=require("./server/models/User")
 const LocalStrategy=require('passport-local')
 // const { Session } = require('inspector');
-const port=process.env.Port||3000
+const port=process.env.Port
 require('dotenv').config();
 
 app.use(flash());
